@@ -1,6 +1,6 @@
 
 
-`cd mm18cats`
+`cd CatTags`
 
 `cp .env.example .env`
 
