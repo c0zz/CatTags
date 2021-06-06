@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Cat;
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
 class CatSeeder extends Seeder
@@ -14,6 +15,14 @@ class CatSeeder extends Seeder
      */
     public function run()
     {
-        Cat::factory(50)->create();
+        $cats = Cat::factory(50)->create();
+
+        foreach ($cats as $cat){
+            $tags = Tag::inRandomOrder()->limit(rand(0, 3))->get();
+
+            foreach($tags as $tag) {
+                $cat ->tags()->attach($tag->id);
+            }
+        }
     }
 }

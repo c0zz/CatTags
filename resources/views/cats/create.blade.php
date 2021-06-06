@@ -69,8 +69,22 @@
                 <input type="file" class="form-control" id="images" name="images[]" multiple>
             </div>
             <div class="mb-3">
+                @error('tag')
+                <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                </div>
+                @enderror
+                <label for="tags" class="form-label">Tags</label>
+                <select class="form-select" id="tags" name="tags[]" multiple aria-label="multiple select tags">
+                    @foreach(\App\Models\Tag::all() as $tag)
+                        <option value="{{ $tag->tag }}">{{ $tag->tag }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <input type="submit" class="btn btn-primary">
             </div>
+
         </form>
     </div>
 @endsection

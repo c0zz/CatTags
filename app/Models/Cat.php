@@ -24,4 +24,7 @@ class Cat extends Model
     public function breed(){
         return $this->belongsTo(Breed::class);
     }
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }

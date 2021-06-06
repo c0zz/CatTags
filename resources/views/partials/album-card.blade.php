@@ -1,6 +1,9 @@
 <div class="card shadow-sm">
     <h5 class="card-header">
         {{$cat->name}}
+        <small>
+
+        </small>
     </h5>
 {{--    <img class="card-img-top" width="100%" height="200" src="{{$cat->images[0]->path ?? 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png'}}"/>--}}
     @if($cat->images->count() === 1)
@@ -36,6 +39,8 @@
         </li>
         <li class="list-group-item"><b>{{__('Age')}}:</b> {{ $cat->age }}</li>
         <li class="list-group-item"><b>{{__('Gender')}}:</b> {{ __(ucfirst(strtolower($cat->gender))) }}</li>
+
+
     </ul>
     <div class="card-body">
         <p class="card-text">{{$cat->description}}</p>

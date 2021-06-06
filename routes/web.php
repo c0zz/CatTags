@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatController;
 use \App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------

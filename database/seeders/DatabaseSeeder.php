@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BreedSeeder::class);
         $this->call(CatSeeder::class);
         $this->call(ImageSeeder::class);
+        $this->call(TagSeeder::class);
     }
 }
